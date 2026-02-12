@@ -1,3 +1,14 @@
+import os
+import streamlit as st
+
+env_ok = bool(os.getenv("GOOGLE_SERVICE_ACCOUNT_JSON"))
+
+# 1) aparece na página (garantido)
+st.sidebar.write("ENV GOOGLE_SERVICE_ACCOUNT_JSON existe?", env_ok)
+
+# 2) aparece nos logs (mais provável)
+print("ENV GOOGLE_SERVICE_ACCOUNT_JSON existe?", env_ok, flush=True)
+
 import os, json
 import streamlit as st
 import pandas as pd
